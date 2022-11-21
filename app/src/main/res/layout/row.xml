@@ -23,7 +23,7 @@
             tools:ignore="MissingClass" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="119dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:orientation="vertical">
@@ -35,15 +35,23 @@
                 android:text="Christopher"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/message"
+                android:id="@+id/stagename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/white"
-                android:text="Hi,How are You"/>
+                android:text="Lyly"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/nation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Việt Nam"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

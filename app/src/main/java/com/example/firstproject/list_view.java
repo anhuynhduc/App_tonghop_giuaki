@@ -15,21 +15,24 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import android.widget.ImageView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 public class list_view extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     ListView listView;
 
-    String arrname[] = {"Huỳnh Đức An", "Võ Lê Nhật Huy", "Huỳnh Ngọc Đạt", "Đỗ Thị Minh Thư", "Hoàng Yến Nhi", "Võ Kim Yến", "Hoàng Thị Mỹ Lệ", "Nguyễn Hoàng Linh"};
+    String arrname[] = {"Huỳnh Đức An", "Lee Sun Bum", "Huỳnh Ngọc Đạt", "Kimberley Anne ", "Lý Á Phương", "Võ Kim Yến", "Hoàng Thị Mỹ Lệ", "Nguyễn Hoàng Linh"};
 
-    String arrmessage[] = {"Hi", "Hello", "How are You", "Hello,How are You", "I am fine", "hi,what about you","hi,what your name ?", "I am fine, thank you and you"};
+    String arrstragename[] = {"LinDo", "Jonh", "Limax", "Jayce", "Linly", "Halley","Sofia", "Barker"};
+
+    String arrnation[] = {"Việt Nam", "Hàn Quốc", "Việt Nam", "Thái Lan", "Việt Nam", "Trung Quốc","Việt Nam", "Việt Nam"};
+
+
 
     int arrimage[] = {R.drawable.user1, R.drawable.user2, R.drawable.user3, R.drawable.user4, R.drawable.user5, R.drawable.user6, R.drawable.user7, R.drawable.user8};
 
@@ -40,7 +43,7 @@ public class list_view extends AppCompatActivity {
         setContentView(R.layout.activity_list_view);
 
         listView = findViewById(R.id.listview);
-        myadapter adapter = new myadapter(this, arrname, arrmessage, arrimage);
+        myadapter adapter = new myadapter(this, arrname, arrstragename,arrnation, arrimage);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,7 +52,8 @@ public class list_view extends AppCompatActivity {
 
                 Intent intent=new Intent(list_view.this,user_profile.class);
                 intent.putExtra("name",arrname[position]);
-                intent.putExtra("message",arrmessage[position]);
+                intent.putExtra("stragename",arrstragename[position]);
+                intent.putExtra("nation",arrnation[position]);
                 intent.putExtra("image",arrimage[position]);
                 startActivity(intent);
 
@@ -86,14 +90,16 @@ public class list_view extends AppCompatActivity {
 
         Context context;
         String rname[];
-        String rmsg[];
+        String rstragename[];
+        String rnation[];
         int rimg[];
 
-        public myadapter( Context context, String[] rname, String[] rmsg, int[] rimg) {
+        public myadapter( Context context, String[] rname, String[] rnation,String[] rstragename, int[] rimg) {
             super(context,R.layout.row,R.id.imageView,rname);
 
             this.rname = rname;
-            this.rmsg = rmsg;
+            this.rnation = rnation;
+            this.rstragename = rstragename;
             this.rimg = rimg;
         }
 
@@ -106,10 +112,12 @@ public class list_view extends AppCompatActivity {
 
             ImageView img=view.findViewById(R.id.imageView);
             TextView username=view.findViewById(R.id.name);
-            TextView usermessage=view.findViewById(R.id.message);
+            TextView userstragename=view.findViewById(R.id.stagename);
+            TextView usernation=view.findViewById(R.id.nation);
 
             username.setText(rname[position]);
-            usermessage.setText(rmsg[position]);
+            userstragename.setText(rstragename[position]);
+            usernation.setText(rnation[position]);
             img.setImageResource(rimg[position]);
 
             return view;
