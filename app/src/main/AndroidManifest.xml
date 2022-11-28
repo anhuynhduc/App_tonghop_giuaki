@@ -23,13 +23,13 @@
             android:name=".Profile"
             android:exported="false" />
         <activity
-            android:name=".list_view"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".user_profile"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".list_view"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,7 +11,7 @@ import android.widget.ImageView;
 public class user_profile extends AppCompatActivity {
 
    ImageView img;
-    TextView name , stragename, nation;
+    TextView name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,18 +19,12 @@ public class user_profile extends AppCompatActivity {
 
         img=findViewById(R.id.profileimage);
         name=findViewById(R.id.username);
-        stragename=findViewById(R.id.profilestragename);
-        nation=findViewById(R.id.profilenation);
         Intent intent=this.getIntent();
 
         String username=intent.getStringExtra("name");
-        String userstragename=intent.getStringExtra("stragename");
-        String usernation=intent.getStringExtra("nation");
-        int imageid=intent.getIntExtra("image",R.drawable.user2);
+        int imageid=intent.getIntExtra("image",R.drawable.cong);
 
         name.setText(username);
-        stragename.setText(userstragename);
-        nation.setText(usernation);
         img.setImageResource(imageid);
 
 
